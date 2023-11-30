@@ -1,0 +1,17 @@
+{% extends "eschoolapp/base.html" %} {% block content %}
+
+<h1> Welcome to E school tube. </h1>
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  <input type="text" name="username" id="" />
+  <br />
+  <br />
+  <input type="password" name="password" id="" placeholder="password" />
+  <br />
+  <br />
+  <input type="submit" value="Submit" />
+</form>
+
+{% endblock content %}

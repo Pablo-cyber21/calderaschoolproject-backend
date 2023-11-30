@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>base</title>
+  </head>
+  <body>
+    <nav>
+      <a href="{% url 'index' %}">Welcome</a>c
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">register</a>
+    </nav>
+
+    {% if user.is_authenticated %} Hello, {{ user.username }}.
+    <a href="{% url 'logout' %}">log out</a>
+
+    {% else %}
+    <a href="{% url 'login' %}">log in</a>
+    {% endif %}
+
+    <div class="container">
+      {% if messages %} {% for message in messages %} {{ message }} {% endfor %}
+      {% endif %} {% block content %}{% endblock content %}
+    </div>
+  </body>
+</html>
